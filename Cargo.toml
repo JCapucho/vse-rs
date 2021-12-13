@@ -1,0 +1,13 @@
+[package]
+name = "vse-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+egui = "0.15"
+naga = "0.7"
+egui_nodes = { path = "../egui_nodes" }
+
+[workspace]
+members = [".", "app"]
+default-members = [".", "app"]
