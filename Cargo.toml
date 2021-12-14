@@ -11,3 +11,6 @@ egui_nodes = { path = "../egui_nodes" }
 [workspace]
 members = [".", "app"]
 default-members = [".", "app"]
+
+[patch.crates-io]
+naga = { path = "../naga" }

@@ -11,11 +11,14 @@ impl epi::App for EditorApp {
     }
 
     fn update(&mut self, ctx: &egui::CtxRef, _: &mut epi::Frame<'_>) {
-        egui::CentralPanel::default().show(ctx, |ui| self.editor.show(ui));
-    }
-
-    fn on_exit(&mut self) {
-        println!("{:#?}", self.editor.module())
+        egui::CentralPanel::default().show(ctx, |ui| {
+            egui::menu::bar(ui, |ui| {
+                if ui.button("dump").clicked() {
+                    println!("{:#?}", self.editor.module())
+                }
+            });
+            self.editor.show(ui);
+        });
     }
 }
 
